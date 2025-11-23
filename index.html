@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <meta name="description" content="Interactive Rating Component challenge — select a rating, submit it, and view the thank-you state. Built following the Frontend Mentor design.">
+  <meta name="keywords" content="interactive rating, frontend mentor, rating component, html css javascript, web challenge">
+  <meta name="author" content="Charles Lindecker">
+
+  <meta property="og:title" content="Interactive Rating Component">
+  <meta property="og:description" content="A clean and interactive rating UI with submit and thank-you states, built from a Frontend Mentor challenge.">
+  <meta property="og:image" content="assets/images/preview-rating-component.jpg">
+
+  <meta name="theme-color" content="#272e38">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    @font-face {
+      font-family: 'Overpass';
+      src: url('./assets/fonts/Overpass/Overpass-VariableFont_wght.ttf') format('truetype');
+      font-weight: 400, 700;
+      font-style: normal;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+        extend: {
+            colors: {
+            white: "hsl(0, 100%, 100%)",
+            orange: {
+              500: "hsl(25, 97%, 53%)"
+            },
+            grey: {
+              500:  "hsl(217, 12%, 63%)",
+              800:  "#272e38",
+              900:  "#1f2630",
+              950:  "#141519"
+            },
+          },
+          fontSize: {
+            'base': '15px'
+          },
+          fontFamily: {
+            serif: ['Overpass', 'serif'],
+            sans: ['Overpass', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <script defer src="./js/script.js"></script>
+</head>
+<body >
+  <main class=" text-base bg-grey-950 flex items-center justify-center min-h-screen w-full font-sans">
+    <section 
+      class="bg-grey-900 p-8 rounded-2xl text-white 
+      flex flex-col gap-4 m-20
+      sm:w-2/3 md:w-2/4 lg:w-4/12 xl:w-1/2 2xl:w-1/4
+      bg-[radial-gradient(circle_at_top_center,_rgba(255,255,255,0.035),_transparent_50%)]"
+    >
+      <figure class="p-2.5 bg-grey-800 rounded-full h-10 w-10 flex items-center justify-center">
+        <img src="./assets/images/icon-star.svg" alt="Orange stars" class="w-4">
+      </figure>
+
+      <h1 class="text-2xl mt-4">How did we do?</h1>
+      <p class="text-grey-500">Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!</p>
+      <ul class="text-grey-500 flex flex-row justify-evenly items-start gap-4 my-2 font-semibold">
+        <li value="1" class="bg-grey-800 rounded-full p-6 w-10 h-10 flex items-center justify-center hover:text-black hover:bg-orange-500 cursor-pointer transition-colors duration-150 ease-in">1</li>
+        <li value="2" class="bg-grey-800 rounded-full p-6 w-10 h-10 flex items-center justify-center hover:text-black hover:bg-orange-500 cursor-pointer transition-colors duration-150 ease-in">2</li>
+        <li value="3" class="bg-grey-800 rounded-full p-6 w-10 h-10 flex items-center justify-center hover:text-black hover:bg-orange-500 cursor-pointer transition-colors duration-150 ease-in">3</li>
+        <li value="4" class="bg-grey-800 rounded-full p-6 w-10 h-10 flex items-center justify-center hover:text-black hover:bg-orange-500 cursor-pointer transition-colors duration-150 ease-in">4</li>
+        <li value="5" class="bg-grey-800 rounded-full p-6 w-10 h-10 flex items-center justify-center hover:text-black hover:bg-orange-500 cursor-pointer transition-colors duration-150 ease-in">5</li>
+      </ul>
+      <button class="bg-orange-500 text-grey-950 h-10 rounded-3xl flex justify-center items-center font-bold uppercase text-sm tracking-widest hover:text-black hover:bg-white cursor-pointer transition-colors duration-150 ease-in">Submit</button>
+    </section>
+
+    <section 
+      class="bg-grey-900 p-8 rounded-2xl text-white
+      flex hidden flex-col gap-6 m-20
+      sm:w-2/3 md:w-2/4 lg:w-4/12 xl:w-1/2 2xl:w-1/4
+      bg-[radial-gradient(circle_at_top_center,_rgba(255,255,255,0.035),_transparent_50%)]"
+    >
+      <figure class=" w-full flex justify-center items-center">
+        <img src="./assets/images/illustration-thank-you.svg" alt="Orange card with receipt">
+      </figure>
+      <h2 class=" text-orange-500 text-sm font-normal bg-grey-800 rounded-full text-center mx-auto py-1.5 px-5">You selected <span id="rating">1</span> out of 5</h2>
+      <h1 class=" text-2xl w-full text-center">Thank you!</h1>
+      <div class="text-grey-500 text-center">
+        <p>We appreciate you taking the time to give a rating.</p>
+        <p>If you ever need more support, don’t hesitate to get in touch!</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="sr-only text-center text-xs">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-blue-500">Frontend Mentor</a>. 
+      Coded by <a href="https://www.linkedin.com/in/charles-lindecker/" class="text-blue-500">Charles LINDECKER</a>.
+    </div>
+  </footer>
+</body>
+</html>
